@@ -49,7 +49,7 @@ router.post('/login', (req, res) => {
             }
             if (bcrypt.compareSync(password, user.password)) {
                 req.session.currentUser = user;
-                return res.json({msg: 'Bienvenide'});
+                return res.json({id:user._id});
                 //res.redirect("/");
             } else {
                 return res.json({msg: 'Las contraseñas no son iguales'});
